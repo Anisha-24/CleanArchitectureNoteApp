@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 31
@@ -87,4 +88,6 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.4.2"
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
 }
