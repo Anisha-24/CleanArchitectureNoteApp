@@ -1,6 +1,5 @@
 package com.plcoding.cleanarchitecturenoteapp.feature_note.data.repository
 
-import androidx.room.Dao
 import com.plcoding.cleanarchitecturenoteapp.feature_note.data.data_source.NoteDao
 import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.model.Note
 import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.repository.NoteRepository
@@ -8,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 class NoteRepositoryImpl(
     private val dao: NoteDao
-) : NoteRepository{
+) : NoteRepository {
 
     override fun getNotes(): Flow<List<Note>> {
         return dao.getNotes()
@@ -19,10 +18,10 @@ class NoteRepositoryImpl(
     }
 
     override suspend fun insertNote(note: Note) {
-        return dao.insertNote(note)
+        dao.insertNote(note)
     }
 
     override suspend fun deleteNote(note: Note) {
-        return dao.deleteNote(note)
+        dao.deleteNote(note)
     }
 }
